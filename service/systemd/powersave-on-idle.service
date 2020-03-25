@@ -1,0 +1,11 @@
+[Unit]
+Description=Save power if system is idle
+Requires=
+After=
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/powersave-on-idle.sh /etc/powersave-on-idle/powersave-on-idle.conf
+
+[Install]
+WantedBy=multi-user.target

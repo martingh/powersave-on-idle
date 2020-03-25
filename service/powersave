@@ -1,0 +1,13 @@
+#!/bin/sh
+
+mode=hibernate
+if [ -e "$(dirname $0)/powersave.mode" ]; then
+  # This can be used for switching between the powersaving modes
+  # For example you may create two cron-jobs/systemd timers:
+  # - One to be run on 8 am, setting the mode to suspend (ln -fs suspend powersave.mode)
+  # - One to be run on 8 pm, setting the mode to hibernate (ln -fs hibernate powersave.mode)
+  mode=$(readlink "$(dirname $0)/powersave.mode")
+fi
+
+echo "Going to save power with mode: $mode"
+/usr/bin/systemctl $mode
