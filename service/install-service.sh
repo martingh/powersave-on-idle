@@ -15,6 +15,7 @@ PYTHON_SRC_DIR="$SERVICE_SRC_DIR/../python"
 set -xe
 install "$SERVICE_SRC_DIR/systemd/powersave-on-idle.service" "$SERVICE_DIR"
 install "$SERVICE_SRC_DIR/powersave-on-idle.sh" "$BIN_DIR"
+install "$SERVICE_SRC_DIR/powersave" "$BIN_DIR"
 install -d "$SYSCONF_DIR/powersave-on-idle"
 install "$SERVICE_SRC_DIR/powersave-on-idle.conf" "$SYSCONF_DIR/powersave-on-idle"
 install "$PYTHON_SRC_DIR/idle.py" "$BIN_DIR"
