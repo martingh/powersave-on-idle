@@ -18,7 +18,7 @@ $ ./python/idle.py -i eth0 -t $(expr 10 \* 1024) -w 10
 # Consider idle state when eth0, eth1 network interfaces both were below 100kB/s on average in the last 40 seconds.
 $ ./python/idle.py -i eth0 -i eth1 -t $(expr 100 \* 1024) -w 40
 
-# Consider idle state when eth0 network interface on average had a rate under 10kB/s and sda had a rate under 5MB/s the last 20 seconds.
+# Consider idle state when eth0 network interface on average had a rate under 10kB/s and sda had a rate under 5MB/s the last 100 seconds.
 $ ./python/idle.py -i eth0 -t $(expr 10 \* 1024) -b sda -r $(expr 5 \* 1024 \* 1024) -w 100
 
 ```
